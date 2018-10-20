@@ -26,7 +26,7 @@ class GetIpInfo
                                            timeout: 5)
     response
   end
-  
+
   def setup_ip_query(url)
     "http://ip-api.com/json/#{url}"
   end
@@ -38,7 +38,9 @@ def start
   puts "[locate_ip] PROCESSING REQUEST FOR #{url_or_ip}"
   ip_info_obj = GetIpInfo.new
   json_response = ip_info_obj.get_site_or_ip_address(url_or_ip)
-  puts "#{json_response}" if json_response
+  puts "#{json_response}" if !json_response['status'] == 'fail'
+  puts "[locate_ip] REQUEST FAILED TO RETURN VALID IP INFORMATION"
+  puts "#{json_response}"
 end
 
 start
