@@ -1,4 +1,5 @@
 ## locate ip
+![temporary logo](https://bt-strike.s3-us-west-2.amazonaws.com/images/ruby.gif "locate ip temporary logo")
 Uses https://ip-api.com to get information on a url or an ip address
 * json result
   * as, city, country, countryCode, isp, lat, lon, org, query, region, regionName, status, timezone, zip
